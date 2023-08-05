@@ -1,0 +1,46 @@
+{% block content %}
+{% load static %}
+
+{% include 'header.html' %}
+
+    <!-- Contact Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-3 pb-3">
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;"></h6>
+                <h1>Users List</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form bg-white" style="padding: 30px;">
+                        <div id="success"></div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email </th>
+                                    <th>Phone</th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  {% for i in result %}
+                                    <td class="name-pr">{{i.name}}</td>
+                                    <td class="price-pr">{{i.email}}</td>
+                                    <td class="quantity-box">{{i.phone}}</td>
+                                   
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+{% include 'footer.html' %}
+
+{% endblock %}
